@@ -17,10 +17,12 @@ export default {
 </script>
 <style scoped>
  .card{
+     height: 15vh;
      border-width: 1px;
      border-radius: 4px;
      border-style: solid;
      border-color: black;
      color: black;
+     margin: 10px;
  }
 </style>

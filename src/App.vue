@@ -67,7 +67,7 @@ export default {
 #container{
   display: grid;
   grid-template-columns: repeat(1, 2fr);
-  gap: 15px;
+  gap: 30px;
   grid-auto-rows: minmax(100px, auto);
   padding: 10px;
 

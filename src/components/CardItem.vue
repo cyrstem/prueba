@@ -1,6 +1,7 @@
 <template>
     <div class="card">
-        <p>{{episodes.name}}</p>
+        <p>{{episodes.episode}}</p>
+
     </div>
 </template>
 <script>
