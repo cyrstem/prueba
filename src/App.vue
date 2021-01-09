@@ -1,56 +1,23 @@
 <template>
   <div id="app">
-        <button v-on:click="epi()" class="btn">Episodes</button>
-        <button v-on:click="char()" class="btn">Characters</button>
-    <div id="container">
-      <Card v-bind:episodes="episodes"/>
-
-    </div>
+    <h1>Tester</h1>
+    <nav>
+      <router-link to="/characters">Characters</router-link>
+      <router-link to="/episodes">Episodes</router-link>
+      <router-view />
+    </nav>
   </div>
 </template>
 
 <script>
-import Card from './components/Card.vue'
-//import Episodes from './components/Episodes.vue'
-//import Characters from './components/Characters.vue'
+
 export default {
   name: 'App',
-  components: {
-    Card
-   // Episodes,
-    //Characters
-  },
   data() {
     return {
-      episodes:[
-        {
-        name: "episode1",
-        air_date: '10-10-21',
-        episode: '1'
-      },
-        {
-        name:"episode2",
-        air_date: '10-10-21',
-        episode: '2'
-      },
-        {
-        name:"episode3",
-        air_date: '12-10-21',
-        episode: '3'
-      }
-      ]
+      
     }
   },
-  methods:{
-      epi(){
-       
-        console.log("episodes")
-      },
-      char(){
-        
-        console.log("show")
-      }
-  }
 }
 </script>
 
@@ -72,14 +39,11 @@ export default {
   padding: 10px;
 
 }
-.btn{
-  width: 200px;
-  height: 30px;
-  background: black;
-  color: white;
+a{
+margin:5px
 }
-.btn:hover{
-  background: white;
-  color:black;
-}
+  nav{
+        padding:15px;
+        margin:15px;
+    }
 </style>
