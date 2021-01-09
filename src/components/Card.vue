@@ -1,12 +1,21 @@
 <template>
     <div class ="card">
-           <p>{{characterList}}</p>
+           <p>{{name}}</p>
+           <p>{{status}}</p>
+           
+           <p>{{air_date}}</p>
+           <p>{{episode}}</p>
+           
     </div>
 </template>
 <script>
 export default {
     name:'Card',
-     props: ['characterList']
+     props: ['name','photo','status','air_date','episode'],
+
+     created() {
+         //console.log(this.user)
+     },
     
 }
 </script>

@@ -1,8 +1,10 @@
 <template>
     <div>
         <Card v-for="character in characters" 
-          :key="character.id" 
-          character-list="character"/>
+          :key="character.name" 
+          :name="character.name"
+          :status="character.status"
+          />
     </div>
 </template>
 <script>
@@ -10,14 +12,12 @@ import axios from 'axios'
 import Card from '@/components/Card'
 export default {
 name:'characters',
-props: ['characterList'],
-
 components:{
   Card
 }, 
 data() {
     return {
-        characters:{}
+        characters:[]
     }
   },
  async mounted() {
@@ -27,6 +27,7 @@ data() {
           query: '{results{name,status}}'
         })
         this.characters = res.data.results
+        
       } catch (e) {
         console.log('err', e)
       }

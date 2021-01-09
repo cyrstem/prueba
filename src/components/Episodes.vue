@@ -1,7 +1,13 @@
 <template>
     <div>
-        <Card v-for="episode in episodes" :key="episode.id"  />
-        <p>{{episodes}}</p>
+        <Card
+         v-for="episode in episodes" 
+         :key="episode.name"
+         :name="episode.name"
+         :air_date="episode.air_date"
+         :episode="episode.episode"
+        />
+        
     </div>
 </template>
 <script>
@@ -17,9 +23,17 @@ data() {
         episodes:[]
     }
   },
-  mounted() {
-    axios.get('https://rickandmortyapi.com/api/episode/')
-    .then(res => (this.episodes = res.data))
-  },
+   async mounted() {
+   try {
+        const res = await axios.get(
+          'https://rickandmortyapi.com/api/episode/', {
+          query: '{results{name,air_date,episode}}'
+        })
+        this.episodes = res.data.results
+        
+      } catch (e) {
+        console.log('err', e)
+      }
+  }
 }
 </script>
