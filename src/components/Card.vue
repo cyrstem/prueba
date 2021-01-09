@@ -1,18 +1,13 @@
 <template>
-    <div>
-        <div v-bind:key="episode.id" v-for ="episode in episodes">
-            <CardItem v-bind:episodes ="episodes"/>
-        </div>
+    <div class ="card">
+           <p>{{characterList}}</p>
     </div>
 </template>
 <script>
-import CardItem from './CardItem'
 export default {
-    name:"Cards",
-    components:{
-        CardItem
-    },
-        props:["episodes"]
+    name:'Card',
+     props: ['characterList']
+    
 }
 </script>
 <style scoped>

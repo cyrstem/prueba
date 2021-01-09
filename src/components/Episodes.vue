@@ -1,13 +1,17 @@
 <template>
     <div>
-        <p>Episodes</p>
+        <Card v-for="episode in episodes" :key="episode.id"  />
         <p>{{episodes}}</p>
     </div>
 </template>
 <script>
 import axios from 'axios'
+import Card from '@/components/Card'
 export default {
 name:'episodes',
+components:{
+    Card
+},
 data() {
     return {
         episodes:[]
