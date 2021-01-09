@@ -1,10 +1,11 @@
 <template>
     <div class ="card">
+    
            <p>{{name}}</p>
            <p>{{status}}</p>
-           
            <p>{{air_date}}</p>
            <p>{{episode}}</p>
+           <img :src="photo" width="75"/> 
            
     </div>
 </template>
@@ -14,7 +15,8 @@ export default {
      props: ['name','photo','status','air_date','episode'],
 
      created() {
-         //console.log(this.user)
+         console.log(this.photo)
+
      },
     
 }

@@ -4,6 +4,7 @@
           :key="character.name" 
           :name="character.name"
           :status="character.status"
+          :photo ="character.image"
           />
     </div>
 </template>
@@ -24,7 +25,7 @@ data() {
    try {
         const res = await axios.get(
           'https://rickandmortyapi.com/api/character/', {
-          query: '{results{name,status}}'
+          query: '{results{name,status,image}}'
         })
         this.characters = res.data.results
         
